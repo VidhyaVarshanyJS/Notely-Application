@@ -1,0 +1,7 @@
+#base image
+FROM java
+COPY . /dist
+WORKDIR /dist
+ENV DISPLAY=host.docker.internal:0.0
+RUN ["java","-jar","Notepad.jar"]
+ENTRYPOINT [ "java","-jar","Notepad.jar"]
